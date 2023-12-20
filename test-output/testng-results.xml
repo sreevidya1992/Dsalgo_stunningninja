@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="8" passed="7" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-12-19T18:47:25 EST" name="Default suite" finished-at="2023-12-19T18:47:45 EST" duration-ms="19983">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@3c46e67a]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2023-12-19T18:47:25 EST" name="Default test" finished-at="2023-12-19T18:47:45 EST" duration-ms="19983">
+      <class name="testrunner.TestRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testrunner.TestRunner@3c46e67a]" started-at="2023-12-19T18:47:25 EST" name="setUpClass" finished-at="2023-12-19T18:47:26 EST" duration-ms="665" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@370c9018]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@3c46e67a]" started-at="2023-12-19T18:47:26 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-19T18:47:34 EST" duration-ms="7781" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["DataStructures"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["DataStructures"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@3c46e67a]" started-at="2023-12-19T18:47:34 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-19T18:47:37 EST" duration-ms="3713" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Home page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["User opens Home page"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@3c46e67a]" started-at="2023-12-19T18:47:37 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-19T18:47:40 EST" duration-ms="2757" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["User Registration"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["The user opens Register Page"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [New Account Created. You are logged in as Username] but found [Username:
+Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only. Password:
+Your password can’t be too similar to your other personal information.
+Your password must contain at least 8 characters.
+Your password can’t be a commonly used password.
+Your password can’t be entirely numeric.
+Password confirmation:
+Enter the same password as before, for verification.
+
+If you already have an account, please Login instead!]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [New Account Created. You are logged in as Username] but found [Username:
+Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only. Password:
+Your password can’t be too similar to your other personal information.
+Your password must contain at least 8 characters.
+Your password can’t be a commonly used password.
+Your password can’t be entirely numeric.
+Password confirmation:
+Enter the same password as before, for verification.
+
+If you already have an account, please Login instead!]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at org.testng.Assert.assertEquals(Assert.java:666)
+at StepDefinition.Register.the_user_should_be_redirected_to_homepage_with_the_message(Register.java:139)
+at ✽.The user should be redirected to Homepage with the message "New Account Created. You are logged in as Username"(file:///C:/Users/DELL/eclipse-workspace/Stunningninjas/src/test/resources/featurefiles/Register.feature:47)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@3c46e67a]" started-at="2023-12-19T18:47:40 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-19T18:47:41 EST" duration-ms="1191" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Sign in to portal"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Sign in Feature"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@3c46e67a]" started-at="2023-12-19T18:47:41 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-19T18:47:42 EST" duration-ms="457" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Sign in to portal"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Sign in Feature"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@3c46e67a]" started-at="2023-12-19T18:47:42 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-19T18:47:43 EST" duration-ms="933" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Sign in to portal"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Sign in Feature"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@3c46e67a]" started-at="2023-12-19T18:47:43 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-19T18:47:43 EST" duration-ms="750" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Sign in to portal"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Sign in Feature"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testrunner.TestRunner@3c46e67a]" started-at="2023-12-19T18:47:43 EST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-19T18:47:45 EST" duration-ms="1608" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Sign in to portal"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Sign in Feature"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testrunner.TestRunner@3c46e67a]" started-at="2023-12-19T18:47:45 EST" name="tearDownClass" finished-at="2023-12-19T18:47:45 EST" duration-ms="49" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- testrunner.TestRunner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
