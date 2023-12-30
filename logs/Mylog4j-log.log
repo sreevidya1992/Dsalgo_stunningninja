@@ -159,9 +159,3 @@
 [WARN ]2023-12-1918:47:43.974[main]utilities.LoggerLoad1)-warning - user not able to loginInvalid Username and Password
 [WARN ]2023-12-1918:47:44.939[main]utilities.LoggerLoad1)-warning - user not able to loginYou are logged in
 [INFO ]2023-12-1918:47:45.582[main]utilities.LoggerLoad1)-info - user signed out successfully
-[WARN ]2023-12-3011:11:27.479[main]utilities.LoggerLoad1)-warning - user not able to loginPlease fill out this field.
-[WARN ]2023-12-3011:11:27.959[main]utilities.LoggerLoad1)-warning - user not able to loginPlease fill out this field.
-[WARN ]2023-12-3011:11:28.607[main]utilities.LoggerLoad1)-warning - user not able to loginInvalid Username and Password
-[WARN ]2023-12-3011:11:29.263[main]utilities.LoggerLoad1)-warning - user not able to loginInvalid Username and Password
-[WARN ]2023-12-3011:11:30.094[main]utilities.LoggerLoad1)-warning - user not able to loginYou are logged in
-[INFO ]2023-12-3011:11:30.558[main]utilities.LoggerLoad1)-info - user signed out successfully
