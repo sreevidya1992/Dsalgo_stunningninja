@@ -2,6 +2,7 @@ package StepDefinition;
 
 import static org.testng.Assert.assertEquals;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
@@ -52,8 +53,9 @@ public class HomePage extends baseClass {
 	}
 
 	@Then("User should see {int} different data structure entries in that dropdown")
-	public void user_should_see_different_data_structure_entries_in_that_dropdown(Integer int1) {
+	public void user_should_see_different_data_structure_entries_in_that_dropdown(Integer int1) throws IOException {
 		List<WebElement> allOptions = driver.findElements(By.xpath("//*[@id=\"navbarCollapse\"]/div[1]/div/div/a"));
+		screenshot("Homepagedropdown");
 	    System.out.println(allOptions.size());
 	    
 	    assertEquals(allOptions.size(), int1);

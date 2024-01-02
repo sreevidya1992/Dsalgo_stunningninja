@@ -15,6 +15,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import Baseclass.baseClass;
 import io.cucumber.java.en.Given;
@@ -35,7 +36,7 @@ public class Array extends baseClass{
 	@Given("user is in the Array page after logged in")
 	public void user_is_in_the_array_page_after_logged_in() {
 		
-		launchBrowser();
+		//launchBrowser();
 		login();
 		
 		
@@ -70,16 +71,25 @@ public class Array extends baseClass{
 
 	@Then("user should be redirected to a page having an tryEditor with a Run button to test")
 	public void user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test() throws IOException {
-		new Actions(driver)
-        .click(TryEditor).sendKeys("num1 = 15\r\n"
-        		+ "num2 = 12\r\n"
-        		+ "sum = num1 + num2\r\n"
-        		+ "print(\"Sum of\", num1, \"and\", num2 , \"is\", sum)")
-        .perform();
-
-		TryEditorRunButton.click();
+		/*
+		 * new Actions(driver) .click(TryEditor).sendKeys("num1 = 15\r\n" +
+		 * "num2 = 12\r\n" + "sum = num1 + num2\r\n" +
+		 * "print(\"Sum of\", num1, \"and\", num2 , \"is\", sum)") .perform();
+		 * 
+		 * TryEditorRunButton.click();
+		 */
 		
 		//readExcel();
+PageFactory.initElements(driver, this);
+		
+		
+		
+		readExcel();
+		DSTryEditorRunBtn.click();
+		
+		screenshot("ArrayTryEditor");
+		String expectedMsg="27";
+		Assert.assertEquals(DSTryEditorResult.getText(), expectedMsg);
 		
 		}
 	    

@@ -1,3 +1,4 @@
+@LinkedList
 Feature: Testing Linked List Page
 
 Scenario: Linked List Data Structure

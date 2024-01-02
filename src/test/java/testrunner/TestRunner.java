@@ -9,11 +9,12 @@ import io.cucumber.junit.Cucumber;
 //@RunWith(Cucumber.class) //Junit execution
 
 	@CucumberOptions(
-			plugin = {"pretty", "html:target/Login.html"}, //reporting purpose
+			plugin = {"pretty","json:target/MyReports/cucumber.json"}, //reporting purpose
 			monochrome=false,  //console output color
-			//tags = "@HomePage or @SignIn", //tags from feature file
+			//tags = "@HomePage or @RegisterTS01 or @LoginTS02 or @DataStructuresTS03 or @stackFeature or @queueFeature or @Array or @LinkedList", //tags from feature file
 			features = {"src/test/resources/featurefiles"}, //location of feature files
-			glue= {"StepDefinition",}
+			glue= {"StepDefinition",},
+			publish=true
 			) //location of step definition files
 
 

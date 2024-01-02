@@ -1,7 +1,10 @@
 package StepDefinition;
 
+import java.io.IOException;
+
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import Baseclass.baseClass;
 import io.cucumber.java.en.Given;
@@ -43,14 +46,24 @@ public class LinkedList extends baseClass{
 	}
 
 	@Then("user should be redirected to TryEditor page with a Run button to test")
-	public void user_should_be_redirected_to_try_editor_page_with_a_run_button_to_test() {
-		new Actions(driver)
-        .click(TryEditor).sendKeys("num1 = 15\r\n"
-        		+ "num2 = 12\r\n"
-        		+ "sum = num1 + num2\r\n"
-        		+ "print(\"Sum of\", num1, \"and\", num2 , \"is\", sum)")
-        .perform();
-		TryEditorRunButton.click();
+	public void user_should_be_redirected_to_try_editor_page_with_a_run_button_to_test() throws IOException {
+//		new Actions(driver)
+//        .click(TryEditor).sendKeys("num1 = 15\r\n"
+//        		+ "num2 = 12\r\n"
+//        		+ "sum = num1 + num2\r\n"
+//        		+ "print(\"Sum of\", num1, \"and\", num2 , \"is\", sum)")
+//        .perform();
+//		TryEditorRunButton.click();
+PageFactory.initElements(driver, this);
+		
+		
+		
+		readExcel();
+		DSTryEditorRunBtn.click();
+		
+		screenshot("LLTryEditor");
+		String expectedMsg="27";
+		Assert.assertEquals(DSTryEditorResult.getText(), expectedMsg);
 	   
 	}
 
@@ -136,7 +149,7 @@ public class LinkedList extends baseClass{
 	public void user_clicks_sign_out() {
 		PageFactory.initElements(driver, this);
 		hSignOut.click();
-		//closeBrowser();
+		closeBrowser();
 	}
 
 }

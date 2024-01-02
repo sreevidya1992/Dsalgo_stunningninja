@@ -114,7 +114,7 @@ public class Signin extends baseClass {
 		assertEquals(actualStatus, status);
 		if(status.equals(success /*hAlertMsg.getText()*/) ) {
 			hSignOut.click();
-			closeBrowser(); 
+			//closeBrowser(); 
 			LoggerLoad.info("info - user signed out successfully");
 			return;
 		}
