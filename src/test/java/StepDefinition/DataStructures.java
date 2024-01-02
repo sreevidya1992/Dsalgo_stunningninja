@@ -1,5 +1,7 @@
 package StepDefinition;
 
+import java.io.IOException;
+
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -12,7 +14,7 @@ import io.cucumber.java.en.When;
 public class DataStructures extends baseClass{
 	@Given("User is on Login Page")
 	public void user_is_on_login_page() {
-	    launchBrowser();
+	    //launchBrowser();
 	    driver.navigate().to("https://dsportalapp.herokuapp.com/login");
 	    
 	}
@@ -94,18 +96,22 @@ public class DataStructures extends baseClass{
 	}
 
 	@Then("The user should be redirected to a page having an tryEditor with a Run button to test")
-	public void the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test() {
+	public void the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test() throws IOException {
 		PageFactory.initElements(driver, this);
 		
-        new Actions(driver)
-                .click(DSTryEditorTextBox).sendKeys("num1 = 15\r\n"
-                		+ "num2 = 12\r\n"
-                		+ "sum = num1 + num2\r\n"
-                		+ "print(\"Sum of\", num1, \"and\", num2 , \"is\", sum)")
-                .perform();
 		
+		/*
+		 * new Actions(driver) .click(DSTryEditorTextBox).sendKeys("num1 = 15\r\n" +
+		 * "num2 = 12\r\n" + "sum = num1 + num2\r\n" +
+		 * "print(\"Sum of\", num1, \"and\", num2 , \"is\", sum)") .perform();
+		 * 
+		 * DSTryEditorRunBtn.click();
+		 */
+		readExcel();
 		DSTryEditorRunBtn.click();
-		String expectedMsg="('Sum of', 15, 'and', 12, 'is', 27)";
+		
+		screenshot("DSTryEditor");
+		String expectedMsg="27";
 		Assert.assertEquals(DSTryEditorResult.getText(), expectedMsg);
 	    
 	}
@@ -134,7 +140,7 @@ public class DataStructures extends baseClass{
 	public void user_clicks_sign_out() {
 		PageFactory.initElements(driver, this);
 		hSignOut.click();
-		closeBrowser();
+		//closeBrowser();
 	}
 
 }

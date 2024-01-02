@@ -1,5 +1,7 @@
 package StepDefinition;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
@@ -52,13 +54,18 @@ public class GraphDataStructure extends baseClass {
 		
 	}
 	@Then("user is able to view the tryEditor")
-	public void user_directed_to_try_editor()   {
-		new Actions(driver)
-        .click(driver.findElement(answerForm)).sendKeys("for i in range(10):\r\n"
-        		+ "     print(i)")
-        .perform();
-		driver.findElement(runBtn).click();
-		driver.close();
+	public void user_directed_to_try_editor() throws IOException   {
+//		new Actions(driver)
+//        .click(driver.findElement(answerForm)).sendKeys("for i in range(10):\r\n"
+//        		+ "     print(i)")
+//        .perform();
+//		driver.findElement(runBtn).click();
+//		driver.close();
+		PageFactory.initElements(driver, this);
+		readExcel();
+		DSTryEditorRunBtn.click();
+		String expectedMsg="27";
+		Assert.assertEquals(DSTryEditorResult.getText(), expectedMsg);
 	}
 	
 	//TC_002
@@ -72,14 +79,22 @@ public class GraphDataStructure extends baseClass {
 		driver.findElement(graphRepButton).click();
 	}
 	@Then("user is able to view the tryRepEditor")
-	public void user_directed_to_try_rep_editor()   {
-		driver.findElement(tryRepLink).click();
-			new Actions(driver)
-        .click(driver.findElement(answerForm)).sendKeys("for i in range(10):\r\n"
-        		+ "     print(i)")
-        .perform();
-		driver.findElement(runBtn).click();
-		driver.close();
+	public void user_directed_to_try_rep_editor() throws IOException   {
+		
+		 driver.findElement(tryRepLink).click();
+		/* new Actions(driver)
+		  .click(driver.findElement(answerForm)).sendKeys("for i in range(10):\r\n" +
+		  "     print(i)") .perform(); driver.findElement(runBtn).click();
+		 * driver.close();
+		 */
+		PageFactory.initElements(driver, this);
+		readExcel();
+		DSTryEditorRunBtn.click();
+		String expectedMsg="27";
+		Assert.assertEquals(DSTryEditorResult.getText(), expectedMsg);
+		driver.navigate().back();
+		PageFactory.initElements(driver, this);
+		driver.findElement(signOut).click();
 	}
 
 }

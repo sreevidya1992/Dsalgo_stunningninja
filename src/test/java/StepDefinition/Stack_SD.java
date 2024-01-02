@@ -15,8 +15,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-
-
+import org.openqa.selenium.support.PageFactory;
 
 import Baseclass.baseClass;
 import io.cucumber.java.en.Given;
@@ -66,12 +65,14 @@ public class Stack_SD extends baseClass{
 		 */
 		 
 		// launchBrowser();
-		 driver.navigate().to("https://dsportalapp.herokuapp.com/login");
+		
+		  driver.navigate().to("https://dsportalapp.herokuapp.com/login");
+		  
+		  
+		  driver.findElement(userName).sendKeys("stunningninja");
+		  driver.findElement(password).sendKeys("TestWeb@321");
+		  driver.findElement(login).click();
 		 
-		 
-	    driver.findElement(userName).sendKeys("stunningninja");
-	    driver.findElement(password).sendKeys("TestWeb@321");
-	    driver.findElement(login).click();
 	    
 	    ds=dataStructure;
 	    if(ds.equals("Stack")) {
@@ -175,11 +176,17 @@ public class Stack_SD extends baseClass{
 	}
 
 	@Then("The result should be printed")
-	public void the_result_should_be_printed() {
+	public void the_result_should_be_printed() throws IOException {
+		PageFactory.initElements(driver, this);
+		//readExcel();
+		String expectedMsg="27";
+		Assert.assertEquals(DSTryEditorResult.getText(), expectedMsg);
 	    
-		WebElement tryEditorOut = driver.findElement(By.xpath("//div/pre[@id='output']"));
-	    String output = tryEditorOut.getText();
-	    System.out.println("The output is: "+output);
+		/*
+		 * WebElement tryEditorOut =
+		 * driver.findElement(By.xpath("//div/pre[@id='output']")); String output =
+		 * tryEditorOut.getText(); System.out.println("The output is: "+output);
+		 */
 	}
 
 	@Given("The user navigationg back to the {string} page")
