@@ -33,6 +33,9 @@
                             <projectName>Stunningninjas</projectName>
                             <outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>
                             <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
+				<jsonFiles>
+                            <param>**/cucumber*.json</param>
+                        </jsonFiles>
                         </configuration>
                     </execution>
                 </executions>
