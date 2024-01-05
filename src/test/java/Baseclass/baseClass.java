@@ -20,6 +20,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -102,7 +103,8 @@ public class baseClass {
 	
 	
 	public static void launchBrowser() {
-	driver = new ChromeDriver();	
+	driver = new ChromeDriver();
+	//driver =new EdgeDriver();
 	driver.manage().window().maximize();
 	driver.get("https://dsportalapp.herokuapp.com/home");
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
