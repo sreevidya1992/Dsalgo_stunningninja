@@ -31,11 +31,11 @@
                         </goals>
                         <configuration>
                             <projectName>Stunningninjas</projectName>
-                            <outputDirectory>${project.build.directory}</outputDirectory>
-                            <inputDirectory>${project.build.directory}</inputDirectory>
+                            <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
+                            <inputDirectory>${project.build.directory}/cucumber</inputDirectory>
 				<jsonFiles>
-                            <param>**/cucumber*.json</param>
-                        </jsonFiles>
+                                   <param>**/*.json</param>
+                                </jsonFiles>
                         </configuration>
                     </execution>
                 </executions>
