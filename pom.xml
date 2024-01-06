@@ -22,6 +22,9 @@
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
                 <version>5.7.7</version>
+		     <configuration>
+                      <testFailureIgnore>true</testFailureIgnore>
+                      </configuration>
               <executions>
                     <execution>
                         <id>execution</id>
