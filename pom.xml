@@ -31,7 +31,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-			   <testFailureIgnore>true</testFailureIgnore>
+			    <buildSuccessOnTestFailure>true</buildSuccessOnTestFailure>
                             <projectName>Stunningninjas</projectName>
                             <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
                             <inputDirectory>${project.build.directory}/cucumber</inputDirectory>
