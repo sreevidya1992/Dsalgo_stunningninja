@@ -11,10 +11,10 @@
     <protocol>https</protocol>
     
     <!-- title of the document -->
-    <documentTitle>Stunningninjas - Cucumber Framework</documentTitle>
+    <documentTitle>Stunningninjas</documentTitle>
     
     <!-- report name - displayed at top-nav -->
-    <reportName>Stunningninjas - Cucumber Report</reportName>
+    <reportName> Stunningninjas - Cucumber Report</reportName>
     
     <!-- global date format override -->  <!-- defaults to yyyy-MM-dd -->
     <dateFormat>yyyy-MM-dd</dateFormat>
@@ -25,7 +25,7 @@
     <!-- custom javascript -->
     <scripts>
       <![CDATA[
-        $(document).ready(function() {
+       $(document).ready(function() {
         
         });
       ]]>
