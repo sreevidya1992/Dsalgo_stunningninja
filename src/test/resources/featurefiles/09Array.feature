@@ -34,8 +34,8 @@ Feature: Testing Array Page
     
     
   	
-		When user clicks the “Search the array” link
-		Then user should be redirected to “Question” page contains a question, an tryEditor with Run and Submit buttons
+		When user clicks the "Search the array" link
+		Then user should be redirected to "Question" page contains questions,an tryEditor to write code with Run and Submit buttons
 		Then user should redirected to practice page
 		When user clicks the "Max Consecutive Ones" link in Practice page
 		Then user should be redirected to "Question" page contains questions,an tryEditor to write code with Run and Submit buttons

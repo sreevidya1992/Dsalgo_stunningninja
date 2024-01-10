@@ -146,8 +146,10 @@ public class Stack_SD extends baseClass{
 	   
 	   
 	 //Reading python code from excel
-	   
+		PageFactory.initElements(driver, this);
 		readExcel();
+		TryEditorRunButton.click();
+		screenshot("Queue");
 		/*
 		 * String path = System.getProperty("user.dir")+
 		 * "/src/test/resources/TestData/PythonCode.xlsx"; File ExcelFile =new

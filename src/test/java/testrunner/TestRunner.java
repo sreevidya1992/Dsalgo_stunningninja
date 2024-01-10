@@ -11,7 +11,7 @@ import io.cucumber.junit.Cucumber;
 	@CucumberOptions(
 			plugin = {"pretty","json:target/cucumber/cucumber.json","html:target/MyReports/cucumber.html","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",}, //reporting purpose
 			monochrome=false,  //console output color
-			//tags = "@HomePage or @RegisterTS01 or @LoginTS02 or @DataStructuresTS03 ",
+			//tags = "@Array",
 				//	+ "or @stackFeature or @queueFeature or @Array or @LinkedList", //tags from feature file
 			features = {"src/test/resources/featurefiles"}, //location of feature files
 			glue= {"StepDefinition",},

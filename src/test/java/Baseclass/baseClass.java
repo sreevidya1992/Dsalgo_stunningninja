@@ -72,7 +72,7 @@ public class baseClass {
 	@FindBy (xpath="//*[text()='Basic Operations in Lists']") public WebElement ArraybasicopertninList;
 	@FindBy (xpath="//*[text()='Applications of Array']") public WebElement ArrayApplications;
 	@FindBy (xpath="//*[text()='Try here>>>']") public WebElement ArrayTryHereButton;
-	@FindBy (partialLinkText = "Search") public WebElement SearchArray;
+	@FindBy (xpath="//*[text()='Search the array']") public WebElement SearchArray;
 	@FindBy (xpath="//*[text()='Max Consecutive Ones']") public WebElement ArrayMaxConsecutiveOnes;
 	@FindBy (xpath="//*[text()='Find Numbers with Even Number of Digits']") public WebElement ArrayFindnum;
 	@FindBy (xpath="//*[text()='Squares of  a Sorted Array']") public WebElement SquaresOfSortedArray;

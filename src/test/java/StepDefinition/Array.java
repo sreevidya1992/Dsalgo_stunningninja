@@ -9,9 +9,13 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
@@ -143,17 +147,14 @@ PageFactory.initElements(driver, this);
 	    
 	}
 
-	@When("user clicks the “Search the array” link")
-	public void user_clicks_the_search_the_array_link() {
+	@When("user clicks the {string} link")
+	public void user_clicks_the_search_the_array_link(String string) {
+		PageFactory.initElements(driver, this);
 		SearchArray.click();
 	    
 	}
 
-	@Then("user should be redirected to “Question” page contains a question, an tryEditor with Run and Submit buttons")
-	public void user_should_be_redirected_to_question_page_contains_a_question_an_try_editor_with_run_and_submit_buttons() {
-	   
-	    
-	}
+	
 
 	@Then("user should redirected to practice page")
 	public void user_should_redirected_to_practice_page() {
@@ -163,24 +164,44 @@ PageFactory.initElements(driver, this);
 
 	@When("user clicks the {string} link in Practice page")
 	public void user_clicks_the_link_in_practice_page(String string) {
+		PageFactory.initElements(driver, this);
 		ArrayMaxConsecutiveOnes.click();
 	    
 	}
 
 	@Then("user should be redirected to {string} page contains questions,an tryEditor to write code with Run and Submit buttons")
-	public void user_should_be_redirected_to_page_contains_questions_an_try_editor_to_write_code_with_run_and_submit_buttons(String string) {
-	   
+	public void user_should_be_redirected_to_page_contains_questions_an_try_editor_to_write_code_with_run_and_submit_buttons(String string) throws IOException, InterruptedException {
+		PageFactory.initElements(driver, this);
+		WebElement test=driver.findElement(By.xpath("//*[@id=\"answer_form\"]/div/div/div[6]/div[1]/div/div/div/div[5]/div[1]/pre"));
+		
+		new Actions(driver).doubleClick(test).keyDown(Keys.CONTROL)
+		.sendKeys("a").sendKeys(Keys.BACK_SPACE).keyUp(Keys.CONTROL).perform();
+		
+		/*
+		 * new Actions(driver) .click(DSTryEditorTextBox).sendKeys("num1 = 15\r\n" +
+		 * "num2 = 12\r\n" + "sum = num1 + num2\r\n" +
+		 * "print(\"Sum of\", num1, \"and\", num2 , \"is\", sum)") .perform();
+		 */
+		readExcel();
+		TryEditorRunButton.click();
+		screenshot("ArrayTryEditorQuestions");
+		String expectedMsg="27";
+		Assert.assertEquals(DSTryEditorResult.getText(), expectedMsg);
+		
 	    
 	}
+	
 
 	@When("user selects {string} link in Practice page")
 	public void user_selects_link_in_practice_page(String string) {
+		PageFactory.initElements(driver, this);
 		ArrayFindnum.click();
 	    
 	}
 
 	@When("user clicks {string} link in Practice page")
 	public void user_clicks_link_in_practice_page(String string) {
+		PageFactory.initElements(driver, this);
 		SquaresOfSortedArray.click();
 	    
 	}
